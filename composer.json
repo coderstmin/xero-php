@@ -1,11 +1,19 @@
 {
-  "name": "depoksarkar/xero-php",
+  "name": "coderstmin/xero-php",
   "type": "library",
   "description": "A client implementation of the Xero API, with a cleaner OAuth interface and ORM-like abstraction.",
-  "homepage": "https://github.com/depoksarkar/xero-php",
+  "homepage": "https://github.com/coderstmin/xero-php",
   "license": "MIT",
+  "keywords": [
+    "xero",
+    "php",
+    "laravel",
+    "eloquent",
+    "accounting"
+  ],
   "require": {
-    "php": ">=5.5.0",
+    "php":">=7.1",
+    "laravel/framework": "^5.1||^6.0||^7.0||^8.0",
     "calcinai/oauth2-xero": "^1.0",
     "guzzlehttp/guzzle": "^6.5|^7.0",
     "guzzlehttp/psr7": "^1.5|^1.6",
@@ -21,12 +29,27 @@
   },
   "autoload": {
     "psr-4": {
-      "XeroPHP\\": "src/XeroPHP/"
+      "XeroPHP\\": "src/xero-php/",
+      "XeroLaravel\\": "src/xero-laravel/"
     }
   },
   "autoload-dev": {
     "psr-4": {
       "XeroPHP\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dipak Sarkar",
+      "email": "dipak@coderstm.com",
+      "role": "Maintainer"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "XeroLaravel\\Providers\\ServiceProvider"
+      ]
     }
   }
 }
